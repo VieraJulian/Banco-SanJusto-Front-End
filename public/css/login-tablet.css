@@ -1,1 +1,10 @@
-@media screen and (min-width: 48em) {}
+@media screen and (min-width: 48em) {
+    .section-right {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-login {
+        width: 85%;
+    }
+}
