@@ -1,5 +1,6 @@
 import "../../public/css/login-mobile.css"
 import "../../public/css/login-tablet.css"
+import "../../public/css/login-desktop.css"
 
 function Login() {
     return (
