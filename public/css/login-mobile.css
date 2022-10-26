@@ -15,7 +15,7 @@
     object-fit: cover;
 }
 
-.section-left-picture img{
+.section-left-picture img {
     width: 10rem;
     height: 7rem;
     object-fit: cover;
@@ -36,10 +36,14 @@
     display: none;
 }
 
+.section-right {
+    width: 100%;
+}
+
 .form-login {
     padding: 1.5rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
@@ -100,4 +104,14 @@ footer img {
     width: 8rem;
     object-fit: cover;
     height: 8rem;
+}
+
+@media screen and (min-width: 31.25em) {
+    .form-login input {
+        max-width: 31.25em;
+    }
+
+    .text-1 {
+        max-width: 27em;
+    }
 }
