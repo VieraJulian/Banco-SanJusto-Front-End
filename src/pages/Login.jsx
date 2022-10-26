@@ -13,9 +13,6 @@ function Login() {
                 </header>
                 <section className="section-left-section">
                     <p>¡Hola! Te damos la bienvenida</p>
-                    <picture>
-                        <img src="/public/img/img-login.png" alt="" />
-                    </picture>
                 </section>
             </section>
             <section className="section-right">
@@ -26,16 +23,11 @@ function Login() {
                     <p className="text-1">No compartas los códigos que te enviamos por SMS o email, el Token de seguridad, los datos de tu tarjeta de coordenadas ni tus claves. <a href="#">Conocé más consejos de seguridad</a></p>
                     <button type="submit" className="form-login-button">Ingresar</button>
                     <p className="text-bottom">Si no tenés u olvidaste tu clave y/o usuario</p>
-                    <a className="text-a-buttom" href="#">Crear clave y usuaio</a>
+                    <a className="text-a-buttom" href="#">Crear clave y usuario</a>
                     <p className="text-bottom">Si sólo tenés clave</p>
-                    <a className="text-a-buttom"href="#">Crear usuario</a>
+                    <a className="text-a-buttom" href="#">Crear usuario</a>
                 </form>
             </section>
-            <footer>
-                <picture>
-                    <img src="/public/img/Logo-Banco-Letra.png" alt="" />
-                </picture>
-            </footer>
         </div>
     )
 }
