@@ -1,2 +1,19 @@
 @media (min-width: 64em) {
+    .form-login {
+        width: 27rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .login-container {
+        align-items: flex-start;
+        background-image: url("../../public/img/image-login.png");
+    }
+    
+    .section-login {
+        align-items: flex-start;
+        padding: 0 0 0 4rem;
+    }
 }
