@@ -1,0 +1,9 @@
+@media (min-width: 64em) {
+    header {
+        height: 6rem;
+    }
+
+    header img {
+        margin-left: 3rem;
+    }
+}

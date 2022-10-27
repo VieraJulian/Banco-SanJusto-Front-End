@@ -1,0 +1,9 @@
+@media screen and (min-width: 48em) {
+    header {
+        height: 7rem;
+    }
+
+    header img {
+        margin-left: 1rem;
+    }
+}

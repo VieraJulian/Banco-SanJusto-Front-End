@@ -1,91 +1,80 @@
-.section-left {
-    width: 100%;
-}
-
-.section-left-header {
-    width: 100%;
-    border-bottom: 2px solid rgba(216, 237, 242, 0.644);
-    margin-bottom: 2rem;
-}
-
-.section-left-picture {
-    object-fit: cover;
-}
-
-.section-left-picture img {
-    width: 10rem;
-    height: 7rem;
-    object-fit: cover;
-}
-
-.section-left-section {
-    display: flex;
-    justify-content: center;
-}
-
-.section-left-section p {
-    font-weight: 500;
-}
-
-.section-right {
+.login-container {
     margin-bottom: 3rem;
 }
 
-.form-login {
-    padding: 1.5rem;
+.section-login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin-top: 2rem;
+    margin: 3rem 0;
+}
+
+.section-login p {
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.section-login a {
+    color: black
+}
+
+.form-login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.87);
+}
+
+.first-p {
+    width: 100%;
+    margin: 1rem 0 2rem 0;
+    text-align: center;
+}
+
+.second-p {
+    width: 95%;
+    text-align: justify;
+    margin: 2rem 0 3rem;
+}
+
+.login-p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .form-login input {
     width: 90%;
-    border: 2px solid #525252;
-    margin-top: 1.5rem;
-    border-radius: 4px;
     height: 2rem;
-    padding: 0 .5rem;
+    padding: 0 .5rem 0;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid #909090;
     outline: none;
+    cursor: pointer;
 }
 
-.text-1 {
-    margin: 2.5rem 0;
-    text-align: justify;
+.button-login {
+    margin-bottom: 3rem;
+    padding: .5rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #c9c9c9;
+    cursor: pointer;
 }
 
-.text-1 a {
+.latest-a {
     text-decoration: none;
-    color: #2b12e3
+    color: #ec0000;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    cursor: pointer;
 }
 
-.form-login-button {
-    border-radius: 5px;
-    border: 1px solid #000;
-    background-color: #c7c7c7;
-    height: 2rem;
-    padding: 0 1rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-}
-
-.text-bottom {
-    text-align: center;
-    width: 100%;
-}
-
-.text-a-buttom {
-    color: #ff0000;
-    text-decoration: none;
-}
-
-@media screen and (min-width: 31.25em) {
-    .form-login input {
-        max-width: 31.25em;
-    }
-
-    .text-1 {
-        max-width: 27em;
-    }
+.form-login i {
+    color: #909090;
+    margin-left: 5px;
+    cursor: pointer;
 }
