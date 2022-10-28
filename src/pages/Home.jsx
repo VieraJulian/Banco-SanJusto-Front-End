@@ -1,5 +1,6 @@
 import "/public/css/Home-mobile.css";
-import "/public/css/Home-tablet.css"
+import "/public/css/Home-tablet.css";
+import "../../public/css/Home-desktop.css"
 
 function Home() {
     return (
@@ -27,13 +28,13 @@ function Home() {
             <section className="secction-transaction">
                 <p className="last-transaction">Últimas transacciones</p>
                 <div className="div-transaction">
-                    <p>a: 6667169658871578</p><p>total: -$20.000,00</p><p>fecha: 2022-10-16 16:35:00</p>
+                    <p>a: 6667169658871578</p><p>total: -$20.000,00</p><p>fecha: 2022-10-16 16:35:00</p><p className="p-numTra">transacción número: 1666710401948</p>
                 </div>
                 <div className="div-transaction">
-                    <p>a: 4858669658808933</p><p>total: -$10.000,00</p><p>fecha: 2022-12-16 18:35:00</p>
+                    <p>a: 4858669658808933</p><p>total: -$10.000,00</p><p>fecha: 2022-12-16 18:35:00</p><p className="p-numTra">transacción número: 1666710091525</p>
                 </div>
                 <div className="div-transaction">
-                    <p>a: 4858851058871578</p><p>total: -$9.000,00</p><p>fecha: 2022-10-25 15:09:48</p>
+                    <p>a: 4858851058871578</p><p>total: -$9.000,00</p><p>fecha: 2022-10-25 15:09:48</p><p className="p-numTra">transacción número: 1666710403762</p>
                 </div>
                 <div className="new-transaction">
                     <a href="#">nueva transacción</a>

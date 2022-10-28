@@ -95,6 +95,10 @@
     background-color: rgba(216, 237, 242, 0.644);
 }
 
+.p-numTra {
+    display: none;
+}
+
 @media screen and (min-width: 22.5em) {
     .card {
         max-width: 21em;

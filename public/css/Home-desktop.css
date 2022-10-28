@@ -1,0 +1,24 @@
+@media (min-width: 64em) {
+    .last-transaction {
+        padding: 0;
+    }
+
+    .secction-transaction {
+        padding: 1.5rem;
+    }
+
+    .div-transaction {
+        width: 100%;
+    }
+
+    .p-numTra {
+        display: flex;
+    }
+}
+
+@media (min-width: 90em) {
+    .home-container {
+        margin: auto;
+        max-width: 90em;
+    }
+}
