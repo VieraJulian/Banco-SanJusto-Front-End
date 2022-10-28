@@ -42,4 +42,8 @@
     .input-container {
         width: 100%;
     }
+
+    .first-p {
+        margin-bottom: 4rem;
+    }
 }

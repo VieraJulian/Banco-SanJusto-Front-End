@@ -35,6 +35,9 @@
 .second-p {
     text-align: justify;
     margin: 2rem 0 3rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: #F3F3F3;
 }
 
 .login-p {
@@ -85,6 +88,16 @@
     position: absolute;
     right: 5px;
     top: 4px;
+}
+
+.login-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    background-color: #F3F3F3;
+    
 }
 
 @media screen and (min-width: 25em) {

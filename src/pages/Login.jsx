@@ -17,12 +17,14 @@ function Login() {
                 <div className="input-container">
                     <input type="text" placeholder="Tu pin" /><i class="fa-solid fa-eye"></i>
                 </div>
-                <p className="second-p">No compartas los códigos que te enviamos por SMS o email, el Token de seguridad, los datos de tu tarjeta de coordenadas ni tus claves, <a href="#">Conocé más consejos de seguridad</a></p>
-                <button className="button-login" type="submit">Ingresar</button>
-                <p className="login-p">Si no tenés u olvidaste tu clave y/o usuario</p>
-                <a className="latest-a" href="#">Crear clave y usuario</a>
-                <p className="login-p">Si sólo tenés clave</p>
-                <a className="latest-a" href="#">Crear clave</a>
+                    <p className="second-p">No compartas los códigos que te enviamos por SMS o email, el Token de seguridad, los datos de tu tarjeta de coordenadas ni tus claves, <a href="#">Conocé más consejos de seguridad</a></p>
+                    <button className="button-login" type="submit">Ingresar</button>
+                <div className="login-div">
+                    <p className="login-p">Si no tenés u olvidaste tu clave y/o usuario</p>
+                    <a className="latest-a" href="#">Crear clave y usuario</a>
+                    <p className="login-p">Si sólo tenés clave</p>
+                    <a className="latest-a" href="#">Crear clave</a>
+                </div>
             </form>
         </div>
     )
