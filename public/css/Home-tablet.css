@@ -1,2 +1,7 @@
 @media screen and (min-width: 48em) {
+    .my-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1.5rem;
+    }
 }
