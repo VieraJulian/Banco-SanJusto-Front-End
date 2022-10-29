@@ -1,0 +1,17 @@
+@media screen and (min-width: 48em) {
+    .first-container {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .p-transactions {
+        padding-left: 0rem;
+    }
+
+    .transactions-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
