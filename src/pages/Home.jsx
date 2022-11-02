@@ -24,7 +24,7 @@ function Home() {
                     <p className="p-saldo">Saldo:</p>
                     <p className="p-total">$34.333,33</p>
                 </article>
-                <i class="fa-solid fa-circle-plus"></i>
+                <i className="fa-solid fa-circle-plus"></i>
             </section>
             <section className="secction-transaction">
                 <p className="last-transaction">Últimas transacciones</p>

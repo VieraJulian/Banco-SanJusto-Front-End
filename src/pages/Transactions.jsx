@@ -33,7 +33,7 @@ function Transactions() {
                 </div>
             </section>
             <section className='arrow-container'>
-                <button><i class="fa-solid fa-arrow-left"></i></button><button><i class="fa-solid fa-arrow-right"></i></button>
+                <button><i className="fa-solid fa-arrow-left"></i></button><button><i className="fa-solid fa-arrow-right"></i></button>
             </section>
         </div>
     )

@@ -100,6 +100,16 @@
     
 }
 
+.msg-error {
+    display: none;
+}
+
+.msg-error.invalid {
+    margin: 0 0 2rem;
+    display: flex;
+    color: red;
+}
+
 @media screen and (min-width: 25em) {
     .form-login input {
         max-width: 25em;
