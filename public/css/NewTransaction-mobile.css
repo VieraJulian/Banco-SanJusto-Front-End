@@ -42,6 +42,7 @@
     border-radius: 5px;
     color: black;
     background-color: rgba(216, 237, 242, 0.644);
+    cursor: pointer;
 }
 
 @media screen and (min-width: 25em) {

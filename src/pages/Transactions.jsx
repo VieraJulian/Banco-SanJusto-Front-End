@@ -9,7 +9,7 @@ function Transactions() {
             <div className='first-container'>
                 <p className='p-transactions'>Historial de transacciones</p>
                 <div>
-                    <Link to="#">nueva transacción</Link>
+                    <Link to="/newTransaction">nueva transacción</Link>
                 </div>
             </div>
             <section className='transactions-container'>

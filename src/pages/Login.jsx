@@ -33,7 +33,7 @@ function Login() {
             let result = await response.json()
             console.log(result)
             if (Array.isArray(result)) {
-                result.forEach((p, index) => {
+                result.forEach(p => {
                     if (p.param === "number" && result.length === 1) {
                         msgErrors[0].innerText = p.msg
                         msgErrors[0].classList.add("invalid")
@@ -53,7 +53,7 @@ function Login() {
             } else {
                 msgErrors[0].classList.remove("invalid")
                 msgErrors[1].classList.remove("invalid")
-                e.target.submit()
+                navigate("/")
             }
         } catch (error) {
             console.log(error)
