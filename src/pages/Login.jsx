@@ -6,10 +6,7 @@ import "/public/css/login-desktop.css";
 
 function Login() {
     const navigate = useNavigate();
-    const [body, setBody] = useState({
-        number: null,
-        pin: null
-    })
+    const [body, setBody] = useState({ number: null, pin: null })
 
     const seting = e => {
         setBody({
@@ -18,35 +15,36 @@ function Login() {
         })
     }
 
-    const base = "http://localhost:4000/user/login"
     const onSubmit = async (e) => {
         e.preventDefault()
-        let msgErrors = document.querySelectorAll(".msg-error")
         try {
-            let response = await fetch(base, {
+            let response = await fetch("http://localhost:4000/user/login", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
                 body: JSON.stringify(body)
             })
+
             let result = await response.json()
-            console.log(result)
+
+            let msgErrors = document.querySelectorAll(".msg-error")
+
             if (Array.isArray(result)) {
-                result.forEach(p => {
-                    if (p.param === "number" && result.length === 1) {
-                        msgErrors[0].innerText = p.msg
+                result.forEach(error => {
+                    if (error.param === "number" && result.length === 1) {
+                        msgErrors[0].innerText = error.msg
                         msgErrors[0].classList.add("invalid")
                         msgErrors[1].classList.remove("invalid")
-                    } else if (p.param === "pin" && result.length === 1) {
-                        msgErrors[1].innerText = p.msg
+                    } else if (error.param === "pin" && result.length === 1) {
+                        msgErrors[1].innerText = error.msg
                         msgErrors[1].classList.add("invalid")
                         msgErrors[0].classList.remove("invalid")
-                    } else if (p.param === "number") {
-                        msgErrors[0].innerText = p.msg
+                    } else if (error.param === "number") {
+                        msgErrors[0].innerText = error.msg
                         msgErrors[0].classList.add("invalid")
-                    } else if (p.param === "pin") {
-                        msgErrors[1].innerText = p.msg
+                    } else if (error.param === "pin") {
+                        msgErrors[1].innerText = error.msg
                         msgErrors[1].classList.add("invalid")
                     }
                 })
@@ -66,7 +64,7 @@ function Login() {
                 <p>¡Hola! Te damos la bienvenida</p>
                 <Link to="#">Conocé más sobre Online Banking</Link>
             </section>
-            <form action='/login' method="post" className="form-login" onSubmit={onSubmit}>
+            <form className="form-login" onSubmit={onSubmit}>
                 <p className="first-p">Ingresá tus datos para operar</p>
                 <div className="input-container">
                     <input type="text" name="number" placeholder="Tu número de tarjeta" onChange={seting} /><i className="fa-solid fa-eye"></i>
