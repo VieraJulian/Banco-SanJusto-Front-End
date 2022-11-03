@@ -26,7 +26,9 @@ function Login() {
                 body: JSON.stringify(body)
             })
 
-            let result = await response.json()
+            let result = await response.json();
+
+            sessionStorage.setItem("user", JSON.stringify(result))
 
             let msgErrors = document.querySelectorAll(".msg-error")
 
