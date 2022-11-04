@@ -73,7 +73,7 @@ function Login() {
                 </div>
                 <p className='msg-error'>error1</p>
                 <div className="input-container">
-                    <input type="text" name="pin" placeholder="Tu pin" onChange={seting} /><i className="fa-solid fa-eye"></i>
+                    <input type="password" name="pin" placeholder="Tu pin" onChange={seting} /><i className="fa-solid fa-eye"></i>
                 </div>
                 <p className='msg-error'>error2</p>
                 <p className="second-p">No compartas los códigos que te enviamos por SMS o email, el Token de seguridad, los datos de tu tarjeta de coordenadas ni tus claves, <Link to="#">Conocé más consejos de seguridad</Link></p>
