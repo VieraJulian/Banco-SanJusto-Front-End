@@ -6,4 +6,8 @@
     header img {
         margin-left: 3rem;
     }
+
+    header div {
+        margin-right: 3rem
+    }
 }
