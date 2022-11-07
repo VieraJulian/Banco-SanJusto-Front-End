@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import "/public/css/login-mobile.css";
+import { login } from "../services/cards"
 import "/public/css/login-tablet.css";
 import "/public/css/login-desktop.css";
 
@@ -18,15 +19,7 @@ function Login() {
     const onSubmit = async (e) => {
         e.preventDefault()
         try {
-            let response = await fetch("http://localhost:4000/user/login", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
-                body: JSON.stringify(body)
-            })
-
-            let result = await response.json();
+            let result = await login(body);
 
             sessionStorage.setItem("user", JSON.stringify(result))
 
@@ -71,11 +64,11 @@ function Login() {
                 <div className="input-container">
                     <input type="text" name="number" placeholder="Tu número de tarjeta" onChange={seting} /><i className="fa-solid fa-eye"></i>
                 </div>
-                <p className='msg-error'>error1</p>
+                <p className='msg-error'></p>
                 <div className="input-container">
                     <input type="password" name="pin" placeholder="Tu pin" onChange={seting} /><i className="fa-solid fa-eye"></i>
                 </div>
-                <p className='msg-error'>error2</p>
+                <p className='msg-error'></p>
                 <p className="second-p">No compartas los códigos que te enviamos por SMS o email, el Token de seguridad, los datos de tu tarjeta de coordenadas ni tus claves, <Link to="#">Conocé más consejos de seguridad</Link></p>
                 <button className="button-login" type="submit">Ingresar</button>
                 <div className="login-div">

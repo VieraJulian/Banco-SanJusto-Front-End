@@ -19,7 +19,7 @@ function Home() {
     let cardNumber = userLogged.cards.find(card => card.cardRegister === 1).number
 
     const [tx, setTx] = useState([])
-    console.log(tx)
+    
     useEffect(() => {
         getTransactions(cardNumber).then((response) => setTx(response.transactions.slice(0, 4)))
     }, [])
