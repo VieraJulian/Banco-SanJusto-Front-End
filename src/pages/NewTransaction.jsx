@@ -5,8 +5,9 @@ import { newTransaction } from "../services/cards"
 
 function NewTransaction() {
     const navigate = useNavigate();
+    let userLogged = JSON.parse(sessionStorage.getItem("user"));
     const [body, setBody] = useState({ number: null, total: null })
-
+    
     const seting = e => {
         setBody({
             ...body,
@@ -17,13 +18,11 @@ function NewTransaction() {
     let onSubmit = async (e) => {
         e.preventDefault()
         try {
-            let user = JSON.parse(sessionStorage.getItem("user"));
-            let usercard = user.cards.find(card => card.cardRegister == 1)
+            let usercard = userLogged.cards.find(card => card.cardRegister == 1)
             let cardNumber = usercard.number
             let result = await newTransaction(body, cardNumber)
-
             let msgErrors = document.querySelectorAll(".msg-error")
-
+            
             if (Array.isArray(result)) {
                 result.forEach(error => {
                     if (error.param === "number" && result.length === 1) {
@@ -45,6 +44,22 @@ function NewTransaction() {
             } else {
                 msgErrors[0].classList.remove("invalid")
                 msgErrors[1].classList.remove("invalid")
+                let cards = userLogged.cards.map(card => {
+                    if (card.number === cardNumber) {
+                        return Object({
+                            ...card, total: parseInt(card.total) - parseInt(body.total)
+                        })
+                    } else if (card.number === parseInt(body.number)) {
+                        return Object({
+                            ...card, total: parseInt(card.total) + parseInt(body.total)
+                        })
+                    } else {
+                        return Object({
+                            ...card
+                        })
+                    }
+                })
+                sessionStorage.setItem("user", JSON.stringify({...userLogged, cards: cards}))
                 navigate("/")
             }
         } catch (error) {
