@@ -7,7 +7,7 @@ import "/public/css/Home-desktop.css"
 
 function Home() {
     let userLogged = JSON.parse(sessionStorage.getItem("user"));
-
+    
     let cards = userLogged.cards.map((card, i) =>
         <article key={i} className="card">
             <span className="span-number">Número:</span><span className="span-cardNumber">{card.number}</span>
@@ -17,7 +17,7 @@ function Home() {
     )
 
     let cardNumber = userLogged.cards.find(card => card.cardRegister === 1).number
-
+    
     const [tx, setTx] = useState([])
     
     useEffect(() => {
@@ -36,7 +36,7 @@ function Home() {
             <p className="p-my-card">Mis Tarjetas</p>
             <section className="my-cards">
                 {cards}
-                {cards.length < 2 ? <i className="fa-solid fa-circle-plus"></i> : null}
+                {cards.length < 2 ? <Link to="/AddCard"><i className="fa-solid fa-circle-plus"></i></Link> : null}
             </section>
             <section className="secction-transaction">
                 <p className="last-transaction">Últimas transacciones</p>

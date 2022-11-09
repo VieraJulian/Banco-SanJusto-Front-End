@@ -1,13 +1,13 @@
-import "/public/css/NewTransaction-mobile.css";
+import { addCard } from "../services/cards";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { newTransaction } from "../services/cards"
 
-function NewTransaction() {
+function AddCard() {
     const navigate = useNavigate();
     let userLogged = JSON.parse(sessionStorage.getItem("user"));
-    const [body, setBody] = useState({ number: null, total: null })
-    
+    let userNumber = userLogged.cards[0].number;
+    const [body, setBody] = useState({ number: null, pin: null, userCard: userNumber})
+
     const seting = e => {
         setBody({
             ...body,
@@ -15,28 +15,27 @@ function NewTransaction() {
         })
     }
 
+
     let onSubmit = async (e) => {
         e.preventDefault()
         try {
-            let usercard = userLogged.cards.find(card => card.cardRegister == 1)
-            let cardNumber = usercard.number
-            let result = await newTransaction(body, cardNumber)
+            let result = await addCard(body);
             let msgErrors = document.querySelectorAll(".msg-error")
-            
+
             if (Array.isArray(result)) {
                 result.forEach(error => {
                     if (error.param === "number" && result.length === 1) {
                         msgErrors[0].innerText = error.msg
                         msgErrors[0].classList.add("invalid")
                         msgErrors[1].classList.remove("invalid")
-                    } else if (error.param === "total" && result.length === 1) {
+                    } else if (error.param === "pin" && result.length === 1) {
                         msgErrors[1].innerText = error.msg
                         msgErrors[1].classList.add("invalid")
                         msgErrors[0].classList.remove("invalid")
                     } else if (error.param === "number") {
                         msgErrors[0].innerText = error.msg
                         msgErrors[0].classList.add("invalid")
-                    } else if (error.param === "total") {
+                    } else if (error.param === "pin") {
                         msgErrors[1].innerText = error.msg
                         msgErrors[1].classList.add("invalid")
                     }
@@ -44,22 +43,8 @@ function NewTransaction() {
             } else {
                 msgErrors[0].classList.remove("invalid")
                 msgErrors[1].classList.remove("invalid")
-                let cards = userLogged.cards.map(card => {
-                    if (card.number === cardNumber) {
-                        return Object({
-                            ...card, total: parseInt(card.total) - parseInt(body.total)
-                        })
-                    } else if (card.number === parseInt(body.number)) {
-                        return Object({
-                            ...card, total: parseInt(card.total) + parseInt(body.total)
-                        })
-                    } else {
-                        return Object({
-                            ...card
-                        })
-                    }
-                })
-                sessionStorage.setItem("user", JSON.stringify({...userLogged, cards: cards}))
+                let newUser = userLogged.cards.push(result)
+                sessionStorage.setItem("user", JSON.stringify({...userLogged}))
                 navigate("/")
             }
         } catch (error) {
@@ -70,17 +55,17 @@ function NewTransaction() {
     return (
         <div className="newTransaction-container">
             <form className="form-newT" onSubmit={onSubmit}>
-                <p className="NewT-p">Nueva transacción</p>
+                <p className="NewT-p">Nueva Tarjeta</p>
                 <label>Número de tarjeta</label>
-                <input className="newT-input" name="number" type="text" placeholder="Ej: 4567719035240001" onChange={seting}/>
+                <input className="newT-input" name="number" type="text" placeholder="Número de tarjeta" onChange={seting} />
                 <p className='msg-error'></p>
-                <label>Total</label>
-                <input className="newT-input" name="total" type="text" placeholder="Ej: 20000,00" onChange={seting}/>
+                <label>Pin</label>
+                <input className="newT-input" name="pin" type="password" placeholder="Pin" onChange={seting} />
                 <p className='msg-error'></p>
-                <button className="newT-button" type="submit">Transferir</button>
+                <button className="newT-button" type="submit">Añadir</button>
             </form>
         </div>
     )
 }
 
-export default NewTransaction
+export default AddCard
