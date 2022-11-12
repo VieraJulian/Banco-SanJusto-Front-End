@@ -17,6 +17,14 @@ function ChosseCard() {
             }
         })
         sessionStorage.setItem("user", JSON.stringify({...userLogged, cards: cardSelected}))
+        let cards = document.querySelectorAll(".card")
+        Array.from(cards).map(card => {
+            if (card.textContent.indexOf(e) != -1) {
+                card.style.boxShadow = "0px 0px 30px rgba(0, 0, 0, 0.80)"
+            } else {
+                card.style.boxShadow = "none"
+            }
+        })
     }
 
     let cards = userLogged.cards.map((card, i) =>

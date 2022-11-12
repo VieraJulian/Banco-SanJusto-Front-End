@@ -52,6 +52,21 @@ function Login() {
             console.log(error)
         }
     }
+
+    let eye = () => {
+        let input = document.querySelector(".input-password")
+        let eyeIcon = document.querySelector(".fa-eye-slash")
+        let eyeIcon2 = document.querySelector(".fa-eye")
+        if (input.type === "password") {
+            input.type = "text"
+            eyeIcon.classList.remove("fa-eye-slash")
+            eyeIcon.classList.add("fa-eye")
+        } else if (input.type === "text") {
+            input.type = "password"
+            eyeIcon2.classList.remove("fa-eye")
+            eyeIcon2.classList.add("fa-eye-slash")
+        }
+    }
     
     return (
         <div className="login-container">
@@ -62,11 +77,11 @@ function Login() {
             <form className="form-login" onSubmit={onSubmit}>
                 <p className="first-p">Ingresá tus datos para operar</p>
                 <div className="input-container">
-                    <input type="text" name="number" placeholder="Tu número de tarjeta" onChange={seting} /><i className="fa-solid fa-eye"></i>
+                    <input type="text" name="number" placeholder="Tu número de tarjeta" onChange={seting} />
                 </div>
                 <p className='msg-error'></p>
-                <div className="input-container">
-                    <input type="password" name="pin" placeholder="Tu pin" onChange={seting} /><i className="fa-solid fa-eye"></i>
+                <div className="input-container">                                                                         
+                    <input type="password" name="pin" className="input-password" placeholder="Tu pin" onChange={seting} /><i className="fa-solid fa-eye-slash" onClick={eye}></i>
                 </div>
                 <p className='msg-error'></p>
                 <p className="second-p">No compartas los códigos que te enviamos por SMS o email, el Token de seguridad, los datos de tu tarjeta de coordenadas ni tus claves, <Link to="#">Conocé más consejos de seguridad</Link></p>

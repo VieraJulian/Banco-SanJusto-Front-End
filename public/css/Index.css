@@ -4,3 +4,15 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
+HTML {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}

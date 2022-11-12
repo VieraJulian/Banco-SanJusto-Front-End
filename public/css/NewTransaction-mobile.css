@@ -1,15 +1,15 @@
 .newTransaction-container {
-    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
 }
 
 .form-newT {
     width: 100%;
+    height: 22rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    background-color: rgba(242, 242, 242, 0.644);
+    background-color: rgba(242, 242, 242);
     margin-top: 2rem;
 }
 
@@ -48,5 +48,25 @@
 @media screen and (min-width: 25em) {
     .form-newT {
         max-width: 28em;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .newTransaction-container {
+        height: 89%;
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 50%;
+        background-image: url("/public/img/fondo-tarjeta-simple.svg")
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .newTransaction-container {
+        height: 89%;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 60%;
+        background-image: url("/public/img/fondo-tarjeta-simple.svg")
     }
 }

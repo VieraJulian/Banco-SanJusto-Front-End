@@ -26,10 +26,15 @@
 }
 
 .card {
+    color: #fff;
     width: 90%;
     padding: 1rem;
     border-radius: 10px;
-    background-color: rgba(216, 237, 242, 0.644);
+    background-color: rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: top;
+    background-image: url(/public/img/Logo-Banco-Icono-removebg-preview.png);
 }
 
 .span-number {
@@ -107,7 +112,8 @@
 
 @media screen and (min-width: 41.25em) {
     .div-transaction {
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
     }
 }

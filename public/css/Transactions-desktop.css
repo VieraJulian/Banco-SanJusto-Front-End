@@ -5,12 +5,11 @@
 
     .div-h-transaction {
         height: 4rem;
-        display: flex;
-        justify-content: space-between;
-        gap: 1.5rem
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+        grid-template-rows: 1fr;
     }
 }
-
 
 @media (min-width: 90em) {
     .div-transactions-container {
